@@ -1,0 +1,50 @@
+#Q1: 3 sum  5, 6, -3, 8, 1, 9, 2
+
+# arr = [5, 6, -3, 8, 1, 9, 2]
+# target = 0
+# print("target:", target)
+# found = False
+
+# for i in range(len(arr)):
+#     for j in range(i + 1, len(arr)):
+#         for k in range(j + 1, len(arr)):
+            
+#             if arr[i] + arr[j] + arr[k] == target:
+#                 print("array:")
+#                 print(arr[i], arr[j], arr[k])
+#                 found = True
+
+# if found == False:
+#     print("No triplet found")
+
+# Q2:fibbonacchi series
+# n = int(input("Enter number of terms: "))
+
+# a = 0
+# b = 1
+
+# for i in range(n):
+#     print(a, end=" ")
+    
+#     c = a + b
+#     a = b
+#     b = c
+
+
+    #Q3 tower of hanoi 
+def tower_of_hanoi(n, source, auxiliary, destination):
+
+    if n == 1:
+        print("Move disk 1 from", source, "to", destination)
+        return
+
+    tower_of_hanoi(n - 1, source, destination, auxiliary)
+
+    print("Move disk", n, "from", source, "to", destination)
+
+    tower_of_hanoi(n - 1, auxiliary, source, destination)
+
+
+n = int(input("Enter number of disks: "))
+
+tower_of_hanoi(n, 'A', 'B', 'C')
